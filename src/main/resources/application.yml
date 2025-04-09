@@ -1,5 +1,6 @@
 spring:
-  application.name: parcial
+  application:
+    name: parcial
   datasource:
     url: jdbc:mysql://mysql:3306/ms_parcial
     username: root
@@ -11,3 +12,9 @@ spring:
     show-sql: true
   server:
     port: 9090
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha

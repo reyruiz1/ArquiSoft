@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ms-parcial
+    ports:
+      - "3307:3306"
+    networks:
+      - my-network
+  ms-parcial:
+    image: ms-parcial:latest
+    ports:
+      - "9090:9090"
+    environment:
+      PORT: 9090
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: "bridge"
